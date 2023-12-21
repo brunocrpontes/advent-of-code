@@ -42,8 +42,9 @@ findFirstDigit word offset
   | isDigit' digit = digit
   | limit == 0 = findFirstDigit (drop 1 word) 0
   | otherwise = findFirstDigit word (offset + 1)
-    where limit = maxDigitLength - offset
-          digit = take limit word
+  where 
+    limit = maxDigitLength - offset
+    digit = take limit word
 
 findLastDigit :: String -> Int -> String
 findLastDigit word offset
